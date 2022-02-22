@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=\"en\" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>Movies - Awards</title>
+    <style>
+        body {
+            background-image: url('../static/movies.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.95);
+            background-blend-mode: lighten;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button onclick="location.href='../'">Back to Main Menu</button>
+</p>
+<h3>How many movies with awards</h3>
+<p>There are <span th:text="${awards}"></span> movies that have received an award out of <span th:text="${movies}"></span>.</p>
+<p>This is about <span th:text="${percent}"></span>% of the movies.</p>
+</body>
+</html>

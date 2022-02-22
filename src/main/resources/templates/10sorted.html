@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=\"en\" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>Movies - 10 sorted</title>
+    <style>
+        body {
+            background-image: url('../static/movies.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.95);
+            background-blend-mode: lighten;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button onclick="location.href='../'">Back to Main Menu</button>
+</p>
+<h3>Random movie</h3>
+<p>Here is a list of 10 random movies sorted by popularity.</p>
+<ol>
+    <li th:each="movie: ${sortedMovies}">
+        <span th:text="${movie}"></span>
+    </li>
+</ol>
+</body>
+</html>

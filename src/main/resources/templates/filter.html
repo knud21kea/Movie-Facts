@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=\"en\" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>Movies - Search</title>
+    <style>
+        body {
+            background-image: url('../static/movies.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.95);
+            background-blend-mode: lighten;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button onclick="location.href='../'">Back to Main Menu</button>
+</p>
+<p>Please fill both fields before submitting new parameters. The search parameters can alternatively be changed in the
+    URL.</p>
+<form id="form" onsubmit="return false;">
+    <label for="newchar">New character:</label>
+    <input type="text" id="newchar" maxlength="1" value="a" placeholder="a"/>
+    <label for="newamount">New amount:</label>
+    <input type="number" id="newamount" value="1"/>
+    <input type="submit" onclick="refresh();">
+</form>
+<script>
+    function refresh() {
+        var input1 = document.getElementById('newchar').value;
+        var input2 = document.getElementById('newamount').value;
+        var url = new URL('http://localhost:8080/filter?character=a&amount=1');
+        var search_params = url.searchParams;
+        search_params.set('character', input1);
+        search_params.set('amount', input2);
+        url.search = search_params.toString();
+        location.href = url.toString()
+    }
+</script>
+<h3>Searching for movie titles</h3>
+<p>Where the title contains '<span th:text="${param.character}">Test</span>' exactly <span th:text="${param.amount}">Test</span>
+    time(s). Note that the search is case sensitive.</p>
+<h4>List matching movies</h4>
+<p>There are <span th:text="${titles.size()}"></span> matches.</p>
+<ul>
+    <li th:each="title: ${titles}">
+        <span th:text="${title}"></span>
+    </li>
+</ul>
+</body>
+</html>

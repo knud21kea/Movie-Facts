@@ -28,10 +28,10 @@
 </form>
 <script>
     function refresh() {
-        var input1 = document.getElementById('newchar').value;
-        var input2 = document.getElementById('newamount').value;
-        var url = new URL('http://localhost:8080/filter?character=a&amount=1');
-        var search_params = url.searchParams;
+        const input1 = document.getElementById('newchar').value;
+        const input2 = document.getElementById('newamount').value;
+        const url = new URL('http://localhost:8080/filter?character=a&amount=1');
+        const search_params = url.searchParams;
         search_params.set('character', input1);
         search_params.set('amount', input2);
         url.search = search_params.toString();

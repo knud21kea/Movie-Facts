@@ -24,7 +24,7 @@ public class HomeController
     @GetMapping("/first")
     public String getFirst(Model model)
     {
-        model.addAttribute("firstTitle","8½");
+        model.addAttribute("firstTitle",cat.getFirstMovieName());
         return "first";
     }
 

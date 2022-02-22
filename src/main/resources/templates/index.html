@@ -3,15 +3,7 @@
 <head>
     <meta charset=\"UTF-8\">
     <title>Movies - Home</title>
-    <style>
-        body {
-            background-image: url('../static/movies.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: rgba(255, 255, 255, 0.95);
-            background-blend-mode: lighten;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
 </head>
 <body>
 <h2>Welcome to Movie Facts Database v1.1</h2>
@@ -27,7 +19,7 @@
 </ul>
 <button onclick="location.href='/first'">First movie</button>
 <button onclick="location.href='/random'">Random movie</button>
-<button onclick="location.href='/ten'">Ten random movies</button>
+<button onclick="location.href='/ten'">Ten random movies</button><br>
 <button onclick="location.href='/awards'">Count awards</button>
 <button onclick="location.href='/filter?character=a&amount=1'">Filter movies</button>
 <button onclick="location.href='/longest?g1=Action&g2=Adventure'">Compare runtimes</button>

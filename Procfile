@@ -1,1 +1,1 @@
-web: java -jar target/knud21kea/bilapp-1.0.jar
+web: java -jar target/knud21kea/Movie-Facts-1.0.jar
